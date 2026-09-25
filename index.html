@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Decor Electricals | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-bolt"></i> HomeDecor<span>Electrics</span>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for LED panels, fans, MCBs...">
+            <button onclick="handleSearch()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-actions">
+            <button id="cartBtn" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i> Cart (<span id="cartCount">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="filters">
+            <button class="filter-btn active" onclick="filterCategory('All')">All</button>
+            <button class="filter-btn" onclick="filterCategory('Lights')">Lights</button>
+            <button class="filter-btn" onclick="filterCategory('Fans')">Fans</button>
+            <button class="filter-btn" onclick="filterCategory('Smart Devices')">Smart Devices</button>
+            <button class="filter-btn" onclick="filterCategory('Safety')">Safety (MCBs)</button>
+        </section>
+
+        <section class="product-grid" id="productGrid">
+        </section>
+    </main>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-summary">
+                <p>Total: ₹<span id="totalAmount">0</span></p>
+                <button class="checkout-btn" onclick="checkout()">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
